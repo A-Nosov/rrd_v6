@@ -15,7 +15,11 @@ const routes = () => [
         children: [
             { path: '/users', element: <UserListPage /> },
             { path: '/users/:userId/profile', element: <UserPage /> },
-            { path: '/users/:userId/edit', element: <EditPage /> }
+            { path: '/users/:userId/edit', element: <EditPage /> },
+            {
+                path: ':userId/*',
+                element: <Navigate to="profile" />
+            }
         ]
     },
     { path: '*', element: <Navigate to="/" /> }
